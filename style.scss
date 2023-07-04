@@ -1,0 +1,154 @@
+/*================================================
+    VARIABLES
+  ================================================
+*/
+
+$color-red: hsl(0, 78%, 62%);
+$color-cyan: hsl(180, 62%, 55%);
+$color-orange: hsl(34, 97%, 64%);
+$color-blue: hsl(212, 86%, 64%);
+
+$color-blue-dark: hsl(234, 12%, 34%);
+$color-blue-gray: hsl(229, 6%, 66%);
+$color-gray-light: hsl(0, 0%, 98%);
+
+// BREAKPOINTS
+
+$bp-medium: 50em; // 800px
+$bp-large: 75em; // 1200px
+
+/*================================================
+    BASE STYLES
+  ================================================
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: $color-blue-gray;
+  background-color: $color-gray-light;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.bold {
+    font-weight: 600;
+    // letter-spacing: 1px;
+    color: $color-blue-dark;
+}
+/*================================================
+    GENERAL STYLES
+  ================================================
+*/
+
+.container {
+    margin-inline: auto;
+    padding-block: 2.5rem;
+    width: calc(min(95vw, 120rem));
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.card__header {
+    align-self: center;
+    text-align: center;
+    max-width: 38rem;
+
+    & h1:first-of-type {
+        font-weight: 400;
+    }
+
+    & p {
+        margin-top: 1.5rem;
+    }
+
+    @media screen and (min-width: $bp-medium) {
+        max-width: 45rem;
+    }
+}
+
+.card__container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas: 
+        "one"
+        "two"
+        "three"
+        "four";
+
+    @media screen and (min-width: $bp-medium) {
+        grid-template-areas: 
+            "one two"
+            "three four";
+    }
+
+    @media screen and (min-width: $bp-large) {
+        grid-template-areas: 
+        ". two ."
+        "one two four"
+        "one three four"
+        ". three .";
+    }
+}
+
+.card {
+    padding: 2rem;
+    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba($color-blue, 0.2);
+
+    & img {
+        align-self: flex-end;
+        margin-top: 2rem;
+    }
+
+    &__supervisor {
+        border-top: .5rem solid $color-cyan;
+        grid-area: one;
+    }
+
+    &__team-builder {
+        border-top: .5rem solid $color-red;
+        grid-area: two;
+    }
+
+    &__karma {
+        border-top: .5rem solid $color-orange;
+        grid-area: three;
+    }
+
+    &__calculator {
+        border-top: .5rem solid $color-blue;
+        grid-area: four;
+    }
+}

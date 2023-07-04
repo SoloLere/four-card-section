@@ -1,0 +1,100 @@
+/*================================================
+    VARIABLES
+  ================================================
+*/
+/*================================================
+    BASE STYLES
+  ================================================
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: #a3a5ae;
+  background-color: #fafafa; }
+
+h1 {
+  font-size: 3rem;
+  margin-top: 0; }
+
+img {
+  display: block;
+  max-width: 100%; }
+
+.bold {
+  font-weight: 600;
+  color: #4c4e61; }
+
+/*================================================
+    GENERAL STYLES
+  ================================================
+*/
+.container {
+  margin-inline: auto;
+  padding-block: 2.5rem;
+  width: calc(min(95vw, 120rem));
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem; }
+
+.card__header {
+  align-self: center;
+  text-align: center;
+  max-width: 38rem; }
+  .card__header h1:first-of-type {
+    font-weight: 400; }
+  .card__header p {
+    margin-top: 1.5rem; }
+  @media screen and (min-width: 50em) {
+    .card__header {
+      max-width: 45rem; } }
+
+.card__container {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas: "one" "two" "three" "four"; }
+  @media screen and (min-width: 50em) {
+    .card__container {
+      grid-template-areas: "one two" "three four"; } }
+  @media screen and (min-width: 75em) {
+    .card__container {
+      grid-template-areas: ". two ." "one two four" "one three four" ". three ."; } }
+
+.card {
+  padding: 2rem;
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(84, 158, 242, 0.2); }
+  .card img {
+    align-self: flex-end;
+    margin-top: 2rem; }
+  .card__supervisor {
+    border-top: 0.5rem solid #45d3d3;
+    grid-area: one; }
+  .card__team-builder {
+    border-top: 0.5rem solid #ea5353;
+    grid-area: two; }
+  .card__karma {
+    border-top: 0.5rem solid #fcaf4a;
+    grid-area: three; }
+  .card__calculator {
+    border-top: 0.5rem solid #549ef2;
+    grid-area: four; }
